@@ -11,12 +11,10 @@
 \usepackage{cite} % Zitierungen
 \usepackage{struktex} % Struktogramme
 \usepackage{array} % kp hat chatgpt benutzt
-\usepackage{booktabs} % "
-\usepackage{longtable} % tabelle seitenumbruch
+\usepackage{longtable} % Tabelle über einen seitenumbruch
 \usepackage[nohyperlinks, printonlyused]{acronym} % abkürzungsverzeichnis
 \usepackage{fontspec}
 \usepackage{blindtext} %LoremIpsum
-\usepackage{lastpage} %Referenz für letzte Seite
 \usepackage{fancyhdr} %Kopf- und Fußzeile
 \usepackage[export]{adjustbox} %Bilder alignment
 \usepackage{stfloats} %Tabular at bottom
@@ -27,7 +25,7 @@
 
 
 \usepackage{subcaption} % Für subfigures glaub
-\usepackage{tikz}
+\usepackage{tikz} % Zum zeichnen
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes.geometric, arrows}
 \setmainfont{Arial}
@@ -384,12 +382,12 @@ Höhe und breite muss man leider selbst in Millimeter angeben, aber geht schon.
 	\label{fig:StruktoBestehen}
 \end{figure}
 
+\newpage
 \section{Codeblöcke}
-Auch codeblöcke können dargestellt werden:
+Auch Codeblöcke können dargestellt werden:
 
 \begin{figure}[h!]
-	\begin{center}
-		\begin{tabular}{c}
+	\centering
 			\begin{lstlisting}
 				public class Main {
 					public static void main(String[] args) throws IOException {
@@ -397,8 +395,6 @@ Auch codeblöcke können dargestellt werden:
 					}
 				}
 			\end{lstlisting}
-		\end{tabular}
-	\end{center}
 	\caption{Beispiel Codeblock}
 	\label{fig:BspCodeblock}
 \end{figure}
