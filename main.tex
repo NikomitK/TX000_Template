@@ -1,3 +1,7 @@
+% Das ist mein Template für die TX000 Arbeiten. Nicht perfekt, also falls ihr Verbesserungsvorschläge habt, stellt gerne einen Pull-Request. 
+% Wenn ihr die cite funktion von LaTeX nutzen wollt, müsst ihr einfach die Quellen im bibtex Format in die sources.bib datei kopieren, google scholar z.B. hat bei den Quellen einen Button mit dem man das so bekommt, auch viele andere websites.
+% Hab noch nicht rausgefunden, wie ich den Counter von den römischen Seitenzahlen am Anfang für das Literaturverzeichnis speichere, deshalb muss das selbst gesetzt werden.
+% Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
 \documentclass[12pt]{report}
 \usepackage[heightrounded]{geometry}
 \geometry{
@@ -25,6 +29,8 @@
 
 
 \usepackage{subcaption} % Für subfigures glaub
+
+
 \usepackage{tikz} % Zum zeichnen
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes.geometric, arrows}
@@ -67,7 +73,7 @@
 \usepackage{graphicx} %Package für Bilder
 \graphicspath{ {./images/} } %Ordner für Bilder
 
-\sloppy
+\sloppy % damit lange Wörter nicht über die Zeile hinausgeschrieben werden.
 
 %--------------------Chapter Heading--------------------
 \makeatletter
@@ -105,9 +111,8 @@
 
 \setlength\parindent{0pt} %Auto Einrücken deaktivieren
 
-%********************************
-%Setup für Inhaltsverzeichnis
 
+%-------------Setup für Inhaltsverzeichnis--------------
 \renewcommand{\contentsname}{Inhaltsverzeichnis} %Umbenennung TOC
 
 \usepackage{tocloft} % Formatierung TOX
@@ -134,9 +139,10 @@
 \renewcommand\cftsecafterpnum{\par\addvspace{12pt}}
 \renewcommand\cftsubsecafterpnum{\par\addvspace{8pt}}
 \renewcommand\cftsubsubsecafterpnum{\par\addvspace{6pt}}
+%-------------------------------------------------------
 
-%********************************
-%Setup für LoF/LoT
+
+%------------------Setup für LoF/LoT--------------------
 \makeatletter
 \renewcommand{\@cftmakeloftitle}{}
 \renewcommand{\@cftmakelottitle}{}
@@ -149,9 +155,10 @@
 \renewcommand\cfttabpagefont{\large}
 \setlength{\cftbeforeloftitleskip}{0pt}
 \setlength{\cftbeforelottitleskip}{0pt}
-%********************************
+%-------------------------------------------------------
 
 
+%----------------Setup für Verlinkungen-----------------
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks,
@@ -160,9 +167,10 @@
 	linkcolor=black,
 	urlcolor=black
 }
+%-------------------------------------------------------
 
 
-
+%-------------Kopf-/Fußzeile für Titlepage--------------
 \fancypagestyle{titlepage}
 {
 	\fancyhead[L]{\includegraphics[scale=0.09]{firmenlogo}}
@@ -170,7 +178,7 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\fancyfoot[C]{}
 }
-
+%-------------------------------------------------------
 
 \begin{document} 
 	\begin{titlepage}
@@ -217,9 +225,9 @@
 		\end{center}
 		
 	\end{titlepage}
-%********************************
-%Kopf- und Fußzeile
 
+
+%------------------Kopf- und Fußzeile-------------------
 \spacing{1.5}
 
 \fancypagestyle{plain}{
@@ -241,17 +249,16 @@
 
 
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+%-------------------------------------------------------
 
-%********************************
 
-%********************************
-%Inhaltsverzeichnis
+%------------------Inhaltsverzeichnis-------------------
 \pagenumbering{Roman}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Inhaltsverzeichnis}
 \tableofcontents
 \addtocontents{toc}{}
 \thispagestyle{plain}
-%********************************
+%-------------------------------------------------------
 
 
 \newpage
@@ -358,7 +365,7 @@ Zitierungen werden mit cite\{Erste Zeile der Quelle in .bib datei\} eingefügt u
 \end{figure}
 
 \subsection{Struktogramm}
-Hier findet sich die dokumentation zum Package: \href{https://augenbit.de/wiki/index.php?title=Struktogramme_mit_LaTeX}{Hyperlink beispiel}.
+Hier findet sich die Dokumentation zum Package: \href{https://augenbit.de/wiki/index.php?title=Struktogramme_mit_LaTeX}{Hyperlink beispiel}.
 Höhe und breite muss man leider selbst in Millimeter angeben, aber geht schon.
 
 \begin{figure}[h!]
@@ -370,12 +377,12 @@ Höhe und breite muss man leider selbst in Millimeter angeben, aber geht schon.
 		}
 		\ifthenelse[12]{3}{3}{DuBenutztDiesesTemplate == true}{\sTrue}{\sFalse}
 		
-		\return{Du bestehst}
-		\change
-		\forallin{$\forall Formkriterien \in Bewertungsbogen$}
-		\sub{Schau mer mal was wird}
-		\forallinend
-		\return{\sFalse}
+			\return{Du bestehst}
+		\change % das \change ist quasi das "else if"
+			\forallin{$\forall Formkriterien \in Bewertungsbogen$} % for each schleife
+				\sub{Schau mer mal was wird}
+			\forallinend
+			\return{\sFalse}
 		\ifend
 	\end{struktogramm}
 	\caption{Struktogramm für Bestehen der Praxisarbeit}
