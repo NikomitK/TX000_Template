@@ -2,6 +2,11 @@
 % Wenn ihr die cite funktion von LaTeX nutzen wollt, müsst ihr einfach die Quellen im bibtex Format in die sources.bib datei kopieren, google scholar z.B. hat bei den Quellen einen Button mit dem man das so bekommt, auch viele andere websites.
 % Hab noch nicht rausgefunden, wie ich den Counter von den römischen Seitenzahlen am Anfang für das Literaturverzeichnis speichere, deshalb muss das selbst gesetzt werden.
 % Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
+
+% Dieser Befehl erlaubt es, XeLaTeX nur für diese Datei zu verwenden, ohne die Build-Konfiguration (zB von TeXstudio) ändern zu müssen. 
+% Siehe: https://tex.stackexchange.com/questions/235245/where-do-i-find-the-xelatex-engine-on-texstudio 
+% !TeX program = xelatex
+
 \documentclass[12pt]{report}
 \usepackage[heightrounded]{geometry}
 \geometry{
