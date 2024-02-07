@@ -225,7 +225,8 @@
 \spacing{1.5}
 
 \fancypagestyle{plain}{
-	\fancyfoot[L]{Nikolas Bodenmüller - TINF22F}
+	\fancyfoot[L]{Vorname Nachname\\
+		 - Kurs}
 	\fancyfoot[C]{Seite \thepage\ }% von \pageref{LastPage}}
 	\fancyfoot[R]{04.09.2023}
 }
@@ -340,6 +341,48 @@ Außerdem gibt es noch diese Beispieltabelle am Boden der Seite (durch [b]):
 \section{Beispiel Zitat}
 Zitierungen werden mit cite\{Erste Zeile der Quelle in .bib datei\} eingefügt und sehen folgendermaßen aus:\cite{knabke2016grundlagen}
 
+\section{Beispiel Diagramme}
+
+\subsection{Flowchart}
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+		\node (in1) [process] {Öffnen des Templates};
+		\node (pro1) [io, below of=in1] {Dein eigener Input};
+		\draw [arrow] (in1) -- (pro1);
+		\node (pro2) [process, below of=pro1] {Kompilation};
+		\draw [arrow] (pro1) -- (pro2);
+		\node (out1) [io, below of=pro2] {Output PDF};
+		\draw [arrow] (pro2) -- (out1);
+	\end{tikzpicture}
+	\caption{Beispiel Flowchart}
+	\label{fig:RufRFilter}
+\end{figure}
+
+\subsection{Struktogramm}
+Hier findet sich die dokumentation zum Package: \href{https://augenbit.de/wiki/index.php?title=Struktogramme_mit_LaTeX}{Hyperlink beispiel}.
+Höhe und breite muss man leider selbst in Millimeter angeben, aber geht schon.
+
+\begin{figure}[h!]
+	\begin{struktogramm}(153,55)[]
+		\assign{
+			\begin{declaration}[Parameter:]
+				\description{\pVar{Beispiel Parameter}}{Hier die Parameter der Methode}
+			\end{declaration}
+		}
+		\ifthenelse[12]{3}{3}{DuBenutztDiesesTemplate == true}{\sTrue}{\sFalse}
+		
+		\return{Du bestehst}
+		\change
+		\forallin{$\forall Formkriterien \in Bewertungsbogen$}
+		\sub{Schau mer mal was wird}
+		\forallinend
+		\return{\sFalse}
+		\ifend
+	\end{struktogramm}
+	\caption{Filterfunktion für die Checkboxen}
+	\label{fig:FilterFunktion}
+\end{figure}
 
 \newpage
 \section{Aufgabenstellung}
