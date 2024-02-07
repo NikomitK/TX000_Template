@@ -12,6 +12,7 @@
 *.cb
 *.cb2
 .*.lb
+*.txt
 
 ## Intermediate documents:
 *.dvi
