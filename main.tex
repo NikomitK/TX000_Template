@@ -7,6 +7,7 @@
 % Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
 
 % Trag hier deine Daten ein, die entsprechenden Felder werden automatisch angepasst.
+\def\meinTitel{Title}
 \def\meinName{Vorname Nachname}
 \def\meinKurs{INF22F}
 \def\meineMatrikelNr{Matrikelnummer}
@@ -209,27 +210,28 @@
 			\vspace*{2cm}
 			
 			%Title
-			{ \huge \bfseries TITLE}
+			{ \huge \bfseries \MakeUppercase{\meinTitel}}
 			%{ \large \bfseries subTitle}\\[0.4cm]
 			
 			\vspace*{1.5cm}
 			
 			%Art der Arbeit
-			\textsc{\Large BACHELORARBEIT // PROJEKTARBEIT // STUDIENARBEIT}
+			\Large BACHELORARBEIT // PROJEKTARBEIT // STUDIENARBEIT
 			
 			\vspace*{3cm}
 			
 			%Hochschule
-			\textsc{\LARGE Studiengang Informatik}\\[0.3cm]
-			\textsc{\LARGE an der Dualen Hochschule}\\[0.3cm]
-			\textsc{\LARGE Baden-Württemberg Stuttgart}\\[2.5cm]
+			{\LARGE Studiengang Informatik}\\
+			{\LARGE an der Dualen Hochschule}\\
+			{\LARGE Baden-Württemberg Stuttgart}\\
 
+			\vspace*{2.5cm}
 			
-			\textsc{\Large von \meinName}
+			\Large von \meinName
 			
 			\vspace*{1.5cm}
 			
-			\textsc{\Large Abgabedatum: \abgabeDatum}
+			\Large Abgabedatum: \abgabeDatum
 
 			\begin{table*}[bp]
 				\begin{tabular}{l l l l}
