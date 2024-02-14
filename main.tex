@@ -257,20 +257,21 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
 %-------------------------------------------------------
 
+\pagenumbering{Roman}
+\newpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Abstract}
+Hier kommt der Abstract.
+\newpage
 
 %------------------Inhaltsverzeichnis-------------------
-\pagenumbering{Roman}
+
 \addcontentsline{toc}{chapter}{\protect\numberline{}Inhaltsverzeichnis}
 \tableofcontents
 \addtocontents{toc}{}
 \thispagestyle{plain}
 %-------------------------------------------------------
 
-
-\newpage
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{\protect\numberline{}Abstract}
-Hier kommt der Abstract.
 
 \newpage
 \chapter*{Ehrenwörtliche Erklärung}
