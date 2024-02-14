@@ -5,6 +5,7 @@
 % Wenn ihr die cite funktion von LaTeX nutzen wollt, müsst ihr einfach die Quellen im bibtex Format in die sources.bib datei kopieren, google scholar z.B. hat bei den Quellen einen Button mit dem man das so bekommt, auch viele andere websites.
 % Hab noch nicht rausgefunden, wie ich den Counter von den römischen Seitenzahlen am Anfang für das Literaturverzeichnis speichere, deshalb muss das selbst gesetzt werden.
 % Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
+
 \documentclass[12pt]{report}
 \usepackage[heightrounded]{geometry}
 \geometry{
@@ -25,6 +26,8 @@
 \usepackage{fancyhdr} %Kopf- und Fußzeile
 \usepackage[export]{adjustbox} %Bilder alignment
 \usepackage{stfloats} %Tabular at bottom
+
+\usepackage{blindtext}
 
 \usepackage[utf8]{inputenc} % this is needed for umlauts
 \usepackage[ngerman]{babel} % this is needed for umlauts
@@ -138,9 +141,9 @@
 \renewcommand\cftsubsubsecpagefont{\normalsize}
 
 
-\renewcommand\cftchapafterpnum{\par\addvspace{12pt}}
-\renewcommand\cftsecafterpnum{\par\addvspace{12pt}}
-\renewcommand\cftsubsecafterpnum{\par\addvspace{8pt}}
+\renewcommand\cftchapafterpnum{\par\addvspace{8pt}}
+\renewcommand\cftsecafterpnum{\par\addvspace{8pt}}
+\renewcommand\cftsubsecafterpnum{\par\addvspace{6pt}}
 \renewcommand\cftsubsubsecafterpnum{\par\addvspace{6pt}}
 %-------------------------------------------------------
 
@@ -345,7 +348,7 @@ Außerdem gibt es noch diese Beispieltabelle am Boden der Seite (durch [b]):
 %	\label{tab:example}
 \end{table}
 
-\newpage
+\pagebreak
 \section{Beispiel Zitat}
 Zitierungen werden mit cite\{Erste Zeile der Quelle in .bib datei\} eingefügt und sehen folgendermaßen aus:\cite{knabke2016grundlagen}
 
@@ -392,7 +395,7 @@ Höhe und breite muss man leider selbst in Millimeter angeben, aber geht schon.
 	\label{fig:StruktoBestehen}
 \end{figure}
 
-\newpage
+\pagebreak
 \section{Codeblöcke}
 Auch Codeblöcke können dargestellt werden:
 
@@ -409,59 +412,63 @@ Auch Codeblöcke können dargestellt werden:
 	\label{fig:BspCodeblock}
 \end{figure}
 
-\newpage
-\section{Aufgabenstellung}
 
 %********************************
 %Aufgabenstellung
 %********************************
+\pagebreak
+\section{Aufgabenstellung}
+\blindtext
+\\
+\\
+\blindtext
 
-
-\newpage
-\section{Vorüberlegung}
 
 %********************************
 %Vorüberlegung
 %********************************
+\pagebreak
+\section{Vorüberlegung}
+\blindtext
 
-
-\newpage
-\chapter{Umsetzung}
 
 %********************************
 %Lösung
 %********************************
-
-
 \newpage
+\chapter{Umsetzung}
+\blindtext
+
+
+%********************************
+%Iwas eigenes
+%********************************
+\pagebreak
 \section{Beispiel}
+\blindtext
 
-
-\newpage
-\chapter{Kritische Reflexion und Ausblick}
 
 %********************************
 %Zusammenfassung und Ausblick
 %********************************
-
-
 \newpage
-\addcontentsline{toc}{chapter}{\protect\numberline{}Literaturverzeichnis}
+\chapter{Kritische Reflexion und Ausblick}
+\blindtext
+
 
 %********************************
 %Literaturverzeichnis
 %********************************
-
-\pagenumbering{Roman}
 % Muss noch manuell gesetzt werden, zu faul für nen fix
-%\setcounter{page}{7}
+\setcounter{page}{8}
+\newpage
+\pagenumbering{Roman}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Literaturverzeichnis}
+
 %Quellenverzeichnis
 \renewcommand{\refname}{Literaturverzeichnis}
 \bibliographystyle{IEEEtran}
 \bibliography{./sources}
-%********************************
-
-
 
 
 \end{document}
