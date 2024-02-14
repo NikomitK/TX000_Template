@@ -4,7 +4,6 @@
 % Das ist mein Template für die TX000 Arbeiten. Nicht perfekt, also falls ihr Verbesserungsvorschläge habt, stellt gerne einen Pull-Request. https://github.com/NikomitK/TX000_Template
 % Bitte lasst auch einen star auf github da, danke.
 % Wenn ihr die cite funktion von LaTeX nutzen wollt, müsst ihr einfach die Quellen im bibtex Format in die sources.bib datei kopieren, google scholar z.B. hat bei den Quellen einen Button mit dem man das so bekommt, auch viele andere websites.
-% Hab noch nicht rausgefunden, wie ich den Counter von den römischen Seitenzahlen am Anfang für das Literaturverzeichnis speichere, deshalb muss das selbst gesetzt werden.
 % Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
 
 % Trag hier deine Daten ein, die entsprechenden Felder werden automatisch angepasst.
@@ -335,6 +334,11 @@ Diese Arbeit wurde bisher in gleicher oder ähnlicher Form oder auszugsweise noc
 	\acro{BA}{Beispiel Acronym}
 \end{acronym}
 
+
+%Speichern des page counters, um bei Literaturverzeichnis weiter zu zählen.
+\newcounter{frontmatterPage}
+\addtocounter{frontmatterPage}{\value{page}} 
+
 \newpage
 \pagenumbering{arabic}
 \chapter{Einleitung}
@@ -475,10 +479,10 @@ Auch Codeblöcke können dargestellt werden:
 %********************************
 %Literaturverzeichnis
 %********************************
-% Muss noch manuell gesetzt werden, zu faul für nen fix
-\setcounter{page}{8}
 \newpage
 \pagenumbering{Roman}
+\setcounter{page}{\value{frontmatterPage}} %Bei \pagenumbering wird Seitenzähler zurückgesetzt, hier wird der gespeicherte Wert vom frontmatter weitergeführt
+\addtocounter{page}{1}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Literaturverzeichnis}
 
 %Quellenverzeichnis
