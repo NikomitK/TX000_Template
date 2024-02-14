@@ -1,10 +1,23 @@
 % !TeX program = xelatex
 % ↑ Automatische Auswahl für XeLaTeX compiler
 
-% Das ist mein Template für die TX000 Arbeiten. Nicht perfekt, also falls ihr Verbesserungsvorschläge habt, stellt gerne einen Pull-Request. 
+% Das ist mein Template für die TX000 Arbeiten. Nicht perfekt, also falls ihr Verbesserungsvorschläge habt, stellt gerne einen Pull-Request. https://github.com/NikomitK/TX000_Template
+% Bitte lasst auch einen star auf github da, danke.
 % Wenn ihr die cite funktion von LaTeX nutzen wollt, müsst ihr einfach die Quellen im bibtex Format in die sources.bib datei kopieren, google scholar z.B. hat bei den Quellen einen Button mit dem man das so bekommt, auch viele andere websites.
 % Hab noch nicht rausgefunden, wie ich den Counter von den römischen Seitenzahlen am Anfang für das Literaturverzeichnis speichere, deshalb muss das selbst gesetzt werden.
 % Bilder kommen in den images Ordner, den müsst ihr beim abrufen eines Bildes nicht angeben, passiert automatisch.
+
+% Trag hier deine Daten ein, die entsprechenden Felder werden automatisch angepasst.
+\def\meinName{Vorname Nachname}
+\def\meinKurs{INF22F}
+\def\meineMatrikelNr{Matrikelnummer}
+\def\firmenName{Unternehmens-Name}
+\def\abteilungsName{Abteilungsname}
+\def\projektBetreuer{Vorname Nachname}
+\def\ausbildungsLeiter{Vorname Nachname}
+\def\abgabeDatum{dd.MM.yyyy}
+
+
 
 \documentclass[12pt]{report}
 \usepackage[heightrounded]{geometry}
@@ -213,17 +226,17 @@
 			\textsc{\LARGE Baden-Württemberg Stuttgart}\\[2.5cm]
 
 			
-			\textsc{\Large von Vorname Nachname}
+			\textsc{\Large von \meinName}
 			
 			\vspace*{1.5cm}
 			
-			\textsc{\Large Abgabedatum: dd.mm.yyyy}
+			\textsc{\Large Abgabedatum: \abgabeDatum}
 
 			\begin{table*}[bp]
 				\begin{tabular}{l l l l}
-					Kurs: & Kursname & Matrikelnummer: & Nummer  \\
-					Unternehmen: & Unternehmensname & Ausbildungsleiter: & Vorname Nachname\\
-					Abteilung: &  Name & Projektbetreuer: &  Vorname Nachname\\
+					Kurs: & \meinKurs & Matrikelnummer: & \meineMatrikelNr  \\
+					Unternehmen: & \firmenName & Ausbildungsleiter: & \ausbildungsLeiter\\
+					Abteilung: &  \abteilungsName & Projektbetreuer: &  \projektBetreuer\\
 				\end{tabular}
 			\end{table*}
 			
@@ -237,10 +250,10 @@
 \spacing{1.5}
 
 \fancypagestyle{plain}{
-	\fancyfoot[L]{Vorname Nachname\\
-		 - Kurs}
+	\fancyfoot[L]{\meinName\\
+		 - \meinKurs}
 	\fancyfoot[C]{Seite \thepage\ }% von \pageref{LastPage}}
-	\fancyfoot[R]{04.09.2023}
+	\fancyfoot[R]{\abgabeDatum}
 }
 
 \pagestyle{fancy}
@@ -296,6 +309,8 @@ Diese Arbeit wurde bisher in gleicher oder ähnlicher Form oder auszugsweise noc
 \addcontentsline{toc}{chapter}{\protect\numberline{}Abbildungsverzeichnis}
 
 \listoffigures
+
+
 
 
 %********************************
