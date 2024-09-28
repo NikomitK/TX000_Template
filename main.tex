@@ -25,8 +25,8 @@
 \usepackage[heightrounded]{geometry}
 \geometry{
 	a4paper,
-	lmargin=3cm, %Seitenrand left
-	tmargin=2.5cm, %Seitenrad top
+	lmargin=3.1cm, %Seitenrand left
+	tmargin=2.8cm, %Seitenrad top
 	headsep=35pt %Abstand von Kopfzeile
 }
 \usepackage[onehalfspacing]{setspace}
@@ -37,12 +37,13 @@
 \usepackage{longtable} % Tabelle über einen seitenumbruch
 \usepackage[nohyperlinks, printonlyused]{acronym} % abkürzungsverzeichnis
 \usepackage{fontspec}
-\usepackage{blindtext} %LoremIpsum
-\usepackage{fancyhdr} %Kopf- und Fußzeile
-\usepackage[export]{adjustbox} %Bilder alignment
-\usepackage{stfloats} %Tabular at bottom
-
-\usepackage{blindtext}
+\usepackage{blindtext} % LoremIpsum
+\usepackage{fancyhdr} % Kopf- und Fußzeile
+\usepackage[export]{adjustbox} % Bilder alignment
+\usepackage{stfloats} % Tabular at bottom
+%\usepackage[table]{xcolor} %Tabellen farben
+\usepackage{tabularx} % Anpassbarere tabellen
+\usepackage{easyreview} % Review anmerkungen
 
 \usepackage[utf8]{inputenc} % this is needed for umlauts
 \usepackage[ngerman]{babel} % this is needed for umlauts
@@ -140,6 +141,8 @@
 
 \setlength{\cftbeforetoctitleskip}{0pt}
 
+\setlength{\cftsubsecnumwidth}{4em} %abstand kapitelnummer - titel
+
 \renewcommand{\cfttoctitlefont}{\huge\bfseries}
 \renewcommand{\cftloftitlefont}{\huge\bfseries}
 
@@ -202,6 +205,7 @@
 %-------------------------------------------------------
 
 \begin{document} 
+	
 	\begin{titlepage}
 		\thispagestyle{titlepage}
 		\newcommand\HRule{\rule{\textwidth}{1pt}} %Titellinien
@@ -236,6 +240,7 @@
 			\vspace*{1.5cm}
 			
 			\Large Abgabedatum: \abgabeDatum
+			
 
 			\begin{table*}[bp]
 				\begin{tabular}{l l l l}
@@ -348,6 +353,7 @@ Diese Arbeit wurde bisher in gleicher oder ähnlicher Form oder auszugsweise noc
 \newpage
 \pagenumbering{arabic}
 \chapter{Einleitung}
+
 
 %********************************
 %Einleitung
